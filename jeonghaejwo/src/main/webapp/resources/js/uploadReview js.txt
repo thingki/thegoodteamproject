@@ -1,0 +1,30 @@
+//리뷰 업로드
+	function upload(){
+		var point = $('input[name=rating]:checked')[0].value;
+		var comment = $('#exampleTextarea')[0].value;
+		var retitle=$("#loInput")[0].value;
+		var utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+		var data = {
+				userNo : "103230395918627060836",
+				code : "294439",
+				point : point,
+				comment : comment,
+				date : utc,
+				placename : "고궁의 아침",
+				retitle : retitle
+		}
+		
+		$.ajax({
+			url : "/review/addComment",
+			data : data,
+			success : function(res){
+				console.log(res);
+			}
+		})
+		
+		$("#review_list").contents().remove();
+		num=0;
+		getReview(num);
+		//form태그 작동
+		//frmPopup.submit();
+	}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="history">
+	<insert id="insert" parameterType="map">
+		insert into history(visitDate,userId,code)
+		values(#{date},#{userId},#{code})
+	</insert>
+	<insert id="todoIn">
+		insert into user_plan(userId,usetime,location,title)
+		values(#{userId},#{usetime},#{location},#{title})
+	</insert>
+	<select id="list" resultType="map" parameterType="map">
+	select * from user_plan
+		<where>
+			userId = #{userId}
+		</where>
+	</select>
+	
+	<select id="select" parameterType="map" resultType="map">
+		select * from history hi
+		left join apidata ap on hi.code=ap.code
+		where hi.userId = #{userId}
+		order by visitNo desc
+		limit #{st}, 5
+	</select>
+	<select id="hisCount" parameterType="string" resultType="int">
+		select count(*) from history
+		where userId=#{userId}
+	</select>
+</mapper>  

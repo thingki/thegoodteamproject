@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="api">
+	<insert id="insert" parameterType="map">
+		insert ignore into apidata(code,placename,mapx,mapy,tel,img,addr,modifiedtime)
+		values(#{code},#{placename},#{mapy},#{mapx},#{tel},#{img},#{addr},#{modifiedtime})
+	</insert>
+
+</mapper>  

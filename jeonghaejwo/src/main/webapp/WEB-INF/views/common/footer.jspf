@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- 하단 -->
+<div class='footer'>
+	<div class='f_logo'>
+		<div id='cat_div'>
+			<img src='${rPath}/imgs/cat.png' />
+		</div>
+	</div>
+	<div class='footer1'>
+		<div class='footer1_socialIcon'>
+			<div style='border: 2vh'>
+				<i class="fab fa-facebook"></i>
+			</div>
+			<div style='border: 2vh'>
+				<i class="fab fa-google"></i>
+			</div>
+			<div style='border: 2vh'>
+				<i class="fab fa-twitter-square"></i>
+			</div>
+			<div style='border: 2vh'>
+				<i class="fab fa-github-square"></i>
+			</div>
+			<div style='border: 2vh'>
+				<i class="far fa-envelope"></i>
+			</div>
+		</div>
+	</div>
+	<div class='footer2'></div>
+	<div class='f_hr'>
+		<hr>
+	</div>
+	<div class='f_text2'>
+		<i class="far fa-registered"></i>2018 - Fonticons, Inc. All rights reserved
+	</div>
+</div>

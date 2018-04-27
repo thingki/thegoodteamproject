@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--   private int boardNo;
+	   private String userNo;
+	   private String boardTitle;
+	   private String boardContent;
+	   private String regist;
+	   private int hit;   -->
+  
+<mapper namespace="board">
+	<select id="selectBoard" parameterType="Integer" resultType="bo">
+		select userName, idx, userId, title, content, DATE_FORMAT(regist, '%W %M %Y') as regist, hit from board
+		where idx=#{num}
+	</select>
+	
+	<select id="getAll"  resultType="bo">
+		select userName, idx, userId, title, content, DATE_FORMAT(regist, '%W %M %Y') as regist, hit from board as b
+		order by idx desc;
+	</select>
+	
+	<select id="getHit" parameterType="Integer" resultType="Integer">
+		select hit from board where idx=#{num}
+	</select>
+		
+	<insert id="insertBoard" parameterType="bo">
+		<!-- insert into board (userId,userName,title,content,regist,hit,point) -->
+		insert into board (userId,userName,title,content,regist,hit,point)
+		values(#{userId},#{userName},#{title},#{content},default,default,#{point})
+	</insert>
+	
+	
+	
+	
+	<update id="updateBoard" parameterType="bo">
+	update board
+	set title=#{title}, content=#{content}
+	where idx=#{idx}
+	</update>
+	
+	<update id="updateBoardHit" parameterType="bo">
+	update board
+	set hit=#{hit}
+	where idx=#{idx}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="Integer">
+	delete from board
+	where idx=#{idx}
+	</delete>
+	
+
+</mapper>  

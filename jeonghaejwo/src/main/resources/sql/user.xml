@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	<select id="selectUserInfo" parameterType="ui" resultType="ui">
+		select
+		userId,userName,ImageURL,Email
+		from user
+		where 1=1
+		and userId = #{userId}
+		and loginApi = #{loginApi}
+	
+	<!-- 	<if test="userId!=null">
+			and userId = #{userId}
+		</if>
+		<if test="userPwd!=null">
+			and userPwd = #{userPwd}
+		</if> -->
+	</select>
+	
+	<select id="selectApiUser" parameterType="map" resultType="map">
+		select *
+		from user
+		where userId=#{userId}
+	</select>
+	
+	<insert id="insertApiUser" parameterType="map">
+		insert into user(userId,userName,ImageURL,Email,loginApi)
+		values(#{userId},#{userName},#{ImageURL},#{Email},#{loginApi})
+	</insert>
+	
+<!-- <insert id="insertUserInfo" parameterType="ui">
+		insert into user(userId, userName, ImageURL, Email)
+		values(#{userId}, #{userName}, #{ImageURL}, #{Email})
+	</insert> -->	
+</mapper>  

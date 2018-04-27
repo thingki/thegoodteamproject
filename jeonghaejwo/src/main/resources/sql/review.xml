@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+	<insert id="insertr" parameterType="map">
+		insert into
+		recommendation(userId,code,point,comment,date,reTitle,imgNo)
+		values(#{userId},#{code},#{point},#{comment},#{date},#{reTitle},#{imgNo});
+	</insert>
+	<select id="select" parameterType="map" resultType="map">
+		select * from recommendation
+		<where>
+			userNo=#{userNo}
+			and code=#{code}
+		</where>
+	</select>
+	<select id="selectList" parameterType="map" resultType="map">
+		select * from recommendation re 
+		left join image img on re.imgNo=img.imgNo
+		left join apidata api on re.code = api.code 
+		order by re.recoNo desc
+		limit #{startNo},8
+	</select>
+</mapper>  

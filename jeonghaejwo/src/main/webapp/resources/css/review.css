@@ -1,0 +1,289 @@
+@charset "UTF-8";
+#review_containers {
+	background-image: url("../imgs/board.jpg");
+	background-repeat: repeat-y;
+	background-position: center;
+	padding-left: 3vw;
+	box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	margin-top: 8vh;
+}
+
+.write_btn_div {
+	text-align: right;
+}
+
+.write_btn {
+	background-color: #ffffff00;
+	border-color: #ffffff;
+	border: solid;
+	margin: 0.5rem;
+	color: white;
+	box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	font-size: 2vmin;
+}
+
+.write_btn:focus {
+	border-color: black;
+}
+
+.writeReviewpen {
+	margin-right: 2vw;
+}
+
+.review_container {
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+}
+
+.review_container>.grid-item {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 10px;
+	font-size: 30px;
+}
+
+.photoAndLocation {
+	grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+	grid-template-areas: ". . photoPin . ."
+		". reviewPhoto reviewPhoto reviewPhoto ."
+		". reviewPhoto reviewPhoto reviewPhoto ."
+		". reviewPhoto reviewPhoto reviewPhoto ."
+		". reviewLocation reviewLocation reviewLocation ."
+		". . . reviewPoint .";
+	background-color: white;
+	background: white;
+	display: inline;
+	float: left;
+	margin: 0 1vw 2vw;
+	padding: 0px 0.5vw 0.5vw;
+	text-align: center;
+	text-decoration: none;
+	-webkit-box-shadow: 0 37px 126px rgba(0, 0, 0, 0.49);
+	-moz-box-shadow: 0 37px 126px rgba(0, 0, 0, 0.49);
+	box-shadow: 0 37px 126px rgba(0, 0, 0, 0.49);
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
+	transition: all .15s linear;
+	z-index: 0;
+	position: relative;
+	width: 14vw;
+	border: solid 2px white;
+}
+
+.photoAndLocation:hover {    
+	border: solid 2px #cecece;
+	box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+	-webkit-animation: mymove 1s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 1s infinite;
+}
+
+.photoPin {
+	grid-area: photoPin;
+}
+
+.photoPin>img {
+	width: 4rem;
+	padding-bottom: 0.5rem;
+}
+
+.reviewPhoto {
+	grid-area: reviewPhoto;
+}
+
+.reviewPhoto>img {
+	width: 100%;
+}
+
+.reviewLocation {
+	grid-area: reviewLocation;
+	color: black;
+	font-size: 1vw;
+}
+
+.reviewPoint {
+	grid-area: reviewPoint;
+	    text-align: right;
+}
+
+.reviewUserId {
+	margin: 0 0 10px;
+	text-align: right;
+}
+/* next 버튼 */
+.rank_nextBtn {
+	color: white;
+	background-color: #ffffff00;
+	position: relative;
+	top: 6vh;
+	box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	font-size: 2vmin;
+	border: solid 2px;
+	transition: all .5s ease;
+}
+
+.rank_nextBtn_right {
+	font-size: 3.5vmin;
+	text-indent: 0.25em;
+	margin-left: 3vw;
+}
+
+.rank_nextBtn:hover {
+	background-color: white;
+	color: black;
+}
+/* 새글쓰기 부분 */
+.review_write_container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas: "writeTitle writeTitle writeTitle writeTitle"
+		"imgUpload imgUpload reviewPoint reviewPoint"
+		"preImg preImg reviewStar reviewStar" "co co co co" "co co co co";
+	grid-gap: 10px;
+	padding: 10px;
+	border: dotted 1px;
+}
+
+.review_write_container>div {
+	text-align: center;
+	font-size: 3.5rem;
+}
+
+.title {
+	grid-area: writeTitle;
+}
+
+.img_btn {
+	grid-area: imgUpload;
+}
+
+.img_preview {
+	grid-area: preImg;
+	border: solid 1.5px rgba(199, 199, 199, 0.53);
+	width: 50%;
+	margin: auto;
+}
+
+.review_point {
+	grid-area: reviewPoint;
+}
+
+.review_star {
+	grid-area: reviewStar;
+	margin: auto;
+}
+
+.review_write_contents {
+	grid-area: co;
+}
+
+#preview_img {
+	width: 5vw;
+	margin-top: 0.1vw;
+}
+
+.review_modal_closeBtn {
+	background-color: #ff7070;
+	color: white;
+}
+
+.review_modal_saveBtn {
+	background-color: #5d5d5d;
+	color: white;
+}
+
+}
+/* 업로드 버튼  */
+.img_btn label {
+	display: inline-block;
+	padding: .5em .75em;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-radius: .25em;
+	color: #fff;
+	background-color: #5d5d5d;
+	border-color: #3c3c3c;
+}
+
+.img_btn input[type="file"] {
+	/* 파일 필드 숨기기 */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/* 별점 */
+fieldset, label {
+	margin: 0;
+	padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+.review_rating {
+	border: none;
+	float: left;
+}
+
+.review_rating>input {
+	display: none;
+}
+
+.review_rating>label:before {
+	margin: 5px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f005";
+}
+
+.review_rating>.half:before {
+	content: "\f089";
+	position: absolute;
+}
+
+.review_rating>label {
+	color: #ddd;
+	float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.review_rating>input:checked ~ label, /* show gold star when clicked */
+	.review_rating:not (:checked ) >label:hover, /* hover current star */
+	.review_rating:not (:checked ) >label:hover ~ label {
+	color: #FFD700;
+} /* hover previous stars in list */
+.review_rating>input:checked+label:hover,
+	/* hover current star when changing rating */ .review_rating>input:checked 
+	~ label:hover, .review_rating>label:hover ~ input:checked ~ label,
+	/* lighten current selection */ .review_rating>input:checked ~ label:hover 
+	~ label {
+	color: #FFED85;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    0%   {top: 1px; left: 1px;}
+    25%  {top: 2px; left: 2px;}
+    50%  {top: 3px; left: 3px;}
+    75%  {top: 2px; left: 2px;}
+    100% {top: 1px; left: 1px;}
+}
+
+@keyframes mymove {
+    0%   {top: 1px; left: 1px;}
+    25%  {top: 2px; left: 2px;}
+    50%  {top: 3px; left: 3px;}
+    75%  {top: 2px; left: 2px;}
+    100% {top: 1px; left: 1px;}
+}

@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+html{
+	background-color: #f3f3f3;
+	font-size: 0.5vmin;
+}
+body {
+	font-family: 'dohyeon';
+	background: #f3f3f3;
+	color: black;
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  	grid-template-areas:
+  		". header header header ."
+  		". mainContainers mainContainers mainContainers ." 
+    	". mainContainers mainContainers mainContainers ."
+    	". mainContainers mainContainers mainContainers ." 
+    	". mainContainers mainContainers mainContainers ." 
+    	". footer footer footer .";
+}
+/* 블라인드 */
+.mainContainers{
+  	grid-area: mainContainers;
+  	text-align: center;
+}
+.common_blind{
+	position:absolute;  
+	left:0;
+	top:0;
+	z-index:9000;  
+	background-color:rgba(0, 0, 0, 0.69);  
+	display:none;
+}
+/* 상단 헤더 */
+.header {
+	grid-area: header;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #ffffff;
+}
+.navbar-nav {
+    float: left;
+    margin: auto;
+    margin-left: 6vw;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 1vw 1vw;
+    font-size: 18px;
+    line-height: 20px;
+}
+.nav_pageName{
+	color: #8585ff;
+}
+.navbar-nav>li>a {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+}
+
+.navbar-default .navbar-nav>li>a: hover {
+    color: black	;
+}
+/* 하단 풋터 */
+.footer {
+  	grid-area: footer;
+	font-family: 'yeonsung';
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr 1fr;
+  	grid-template-areas: 
+    	". logo . footer1 footer1 footer1 footer1 footer2 footer2 ."
+    	". hr hr hr hr hr hr hr hr ."
+    	". text2 text2 text2 text2 text2 text2 text2 text2 .";
+    margin-top: 4vh;
+}
+
+.f_logo {
+  	grid-area: logo;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#cat_div>img{
+	width: 14vmin;
+    position: absolute;
+    top: 0;
+    left: 0.5vw;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    filter: invert(40%);
+}
+#cat_msg_div{
+	display:none;
+	position: relative; 
+}
+
+#cat_say{
+	position: absolute;
+    background-image: url(../imgs/bubble.png);
+    background-size: 16vmin 6vmin;
+    background-repeat: no-repeat;
+    top: -8.5vh;
+    left: 2vw;
+    width: 16vmin;
+    height: 6vmin;
+    line-height: 5vmin;
+}
+.cat_say_span{
+	font-size: 2vmin;
+    color: red;
+    position: relative;
+}
+.footer1{
+  grid-area: footer1;
+}
+.footer1_socialIcon{
+	position: relative;
+    top: 2vh;
+	    font-size: 1.2vmax;
+}
+.footer1_socialIcon>div{
+    display: inline-block;
+}
+
+
+	
+.footer2{
+  grid-area: footer2;
+  }
+.f_hr{
+  grid-area: hr;
+  }
+
+.logoutFace{
+  display: none;
+}
+.logoutGoo{
+	display: none;
+}
+.f_text2{
+  grid-area: text2;
+  }
+
+
+
+
+/* menu */
+.sidenav {
+	grid-area: sideMenu;
+	font-family: 'hanna';
+    height: 100%;
+    position: fixed;
+    z-index: 201;
+    top: 0;
+    right:-11vw;
+    width: 17vw;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+  	grid-template-areas: 
+    	"menu1 menu2 menu2 menu2 menu2 menu2";
+}
+
+.sidenav>div{
+	text-align: left;
+}
+
+.menu_grid1 {
+  grid-area: menu1;
+  width: 5vw;
+}
+.menu_grid2 {
+  grid-area: menu2;
+    overflow-x: hidden;
+    width: 0;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 80%;
+}
+/*  */
+
+#menu_checkbox {
+  display: none;
+}
+
+#menu_icon {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 1.7em;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  text-align: left;
+}
+
+#menu_icon > div,
+#menu_icon > div:before,
+#menu_icon > div:after {
+  background: black;
+  position: absolute;
+  height: 5px;
+  width: 50px;
+  border-radius: 4px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#menu_icon div:first-child {
+  top: 0px;
+}
+#menu_icon div:nth-child(2) {
+  top: 10px;
+}
+#menu_icon div:nth-child(3) {
+  top: 20px;
+}
+
+#menu_checkbox + #menu_icon div:nth-child(3):after {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  background: none;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  left: 15px;
+  top: 10px;
+  border-radius: 0px;
+}
+
+#menu_checkbox:checked + #menu_icon div:first-child {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+  background: none;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  left: 14px;
+  top: -14px;
+  border-radius: 0px;
+}
+#menu_checkbox:checked + #menu_icon div:nth-child(2) {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(495deg);
+          transform: rotate(495deg);
+  background: none;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  left: 28px;
+  top: 0px;
+  border-radius: 0px;
+}
+#menu_checkbox:checked + #menu_icon div:nth-child(3) {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+  background: none;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+}
+#menu_checkbox:checked + #menu_icon div:nth-child(3):after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  -webkit-transform: rotate(-450deg);
+          transform: rotate(-450deg);
+  background: none;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  left: 0px;
+  top: 20px;
+  border-radius: 0px;
+}
+
+/*  */
+.sidenav a {
+    padding: 6vh 0 0 0;
+    text-decoration: none;
+    font-size: 3vmin;
+    color: #a5a5a5;
+    display: block;
+    transition: 0.6s;
+}
+
+.sidenav a:hover {
+    color: white;
+}
+
+.sidenav a:after {
+    color: black;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* 필요없는건가??
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+    margin-right: 6%;
+} */
+
+
+/* 시간 */
+.time_container {
+	font-family: 'dohyeon';
+    text-align: center;
+    color: black;
+    margin: auto;
+    width: 80vw;
+}
+
+#clock {
+	position: relative;
+	font-size: 1.5vmax;
+    display: inline-block;
+    width: 4%;
+}
+
+#sec{
+	position: relative;
+	font-size: 1vmax;
+    display: inline-block;
+    width: 10%;
+}
+
+#month {
+	position: relative;
+	font-size: 1.5vmax;
+    display: inline-block;
+    width: 10%;
+}
+
+.date {
+	position: relative;
+	font-size: 1.5vmax;
+    display: inline-block;
+    width: 10%;
+}
+
+.year {
+	position: relative;
+	font-size: 1.5vmax;
+    display: inline-block;
+    width: 10%;
+}
+
+.day {
+	position: relative;
+	font-size: 1.5vmax;
+    display: inline-block;
+    width: 10%;
+}
+
+/* 반응형을 위한 셋팅 */
+@media screen and (max-height: 450px) {
+	
+}
+
+@media screen and (max-width: 750px) {
+	
+}
+
+@media screen and (max-width: 435px) {
+ .footer1_socialIcon{
+	
+}
+}
+/* 폰트 모음 */
+
+@font-face {
+	font-family: 'dohyeon';
+	src: url(../fonts/BMDOHYEON_ttf.ttf);
+}
+@font-face {
+	font-family: 'hanna';
+	src: url(../fonts/BMHANNA.ttf);
+}@font-face {
+	font-family: 'jua';
+	src: url(../fonts/BMJUA_ttf.ttf);
+}@font-face {
+	font-family: 'kiranghaerang';
+	src: url(../fonts/BMKIRANGHAERANG-TTF.ttf);
+}@font-face {
+	font-family: 'yeonsung';
+	src: url(../fonts/BMYEONSUNG_ttf.ttf);
+}@font-face {
+	font-family: 'oseong-bold';
+	src: url(../fonts/OSeongandHanEum-Bold.ttf);
+}@font-face {
+	font-family: 'oseong';
+	src: url(../fonts/OSeongandHanEum-Regular.ttf);
+}

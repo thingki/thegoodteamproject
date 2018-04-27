@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/main/webapp/WEB-INF/views/common/footer.jspf=UTF-8
+encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
+encoding//src/main/webapp/resources/js/common.js=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/views/test/vanilla-js-calendar-master/calendar.jsp=UTF-8
+>>>>>>> refs/remotes/origin/master

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rank">
+	<select id="selectRankList" resultType="map">
+	select re.code code, avg(re.point) avg, count(re.point) count , 
+	api.placename, api.img, api.tel, api.addr from recommendation as re, 
+	apidata as api 
+	<where>
+		re.code=api.code
+	</where>
+	group by re.code order by re.point desc;
+	</select>	
+</mapper>  

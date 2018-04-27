@@ -1,0 +1,557 @@
+@charset "UTF-8";
+
+/* 정해줘 메인 프로그램 css */
+.nowdo_container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	z-index: -150;
+}
+/* 로딩 */
+.loding {
+	width: 100%;
+	height: 100%;
+	z-index: 9150;
+}
+
+.jhj_container {
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr 1fr;
+  	grid-template-areas: 
+    	"map map map map"
+    	"input input input input";
+}
+
+.input_container {
+	grid-area: input;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+  	grid-template-areas: 
+    	"user_setting user_setting user_setting user_setting user_setting user_setting user_setting user_setting"
+    	"time_div time_div time_div time_div time_div time_div time_div time_div"
+    	"funkyradio funkyradio funkyradio funkyradio funkyradio funkyradio funkyradio funkyradio"
+    	"summit_btn summit_btn summit_btn summit_btn summit_btn summit_btn summit_btn summit_btn"
+    	"result_num1 result_name1 result_name1 result_address1 result_address1 result_address1 result_tel1 result_btn1"
+    	"result_num2 result_name2 result_name2 result_address2 result_address2 result_address2 result_tel2 result_btn2"
+    	"result_num3 result_name3 result_name3 result_address3 result_address3 result_address3 result_tel3 result_btn3"
+    	"result_num4 result_name4 result_name4 result_address4 result_address4 result_address4 result_tel4 result_btn4"
+    	"result_num5 result_name5 result_name5 result_address5 result_address5 result_address5 result_tel5 result_btn5"
+    	"result_num6 result_name6 result_name6 result_address6 result_address6 result_address6 result_tel6 result_btn6"
+    	". backhaejwo backhaejwo backhaejwo retryhaejwo retryhaejwo retryhaejwo .";
+    width: 100%;
+}
+/*  */
+.resultLine1{
+	margin-top: 8vh
+}
+.backhaejwo{
+	grid-area:backhaejwo;
+	 box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border-color: #ffa4a4;
+}
+.retryhaejwo{
+	grid-area: retryhaejwo;
+	box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border-color: gold;
+}
+.backhaejwo >button{
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffa4a4;
+    font-size: 1.5vmin;
+    height: 3vh;
+    
+    transition: 0.6s;
+}
+.retryhaejwo >button{
+    background-color: rgba(255, 255, 255, 0);
+    color: gold;
+    font-size: 1.5vmin;
+    height: 3vh;
+    
+    transition: 0.6s;
+}
+
+.backhaejwo >button:hover{
+    background-color:#ffa4a4;
+    color: black;
+}
+.retryhaejwo >button:hover{
+    background-color: gold;
+    color: black;
+}
+.haejwoIcon{
+	margin-right: 0.5vw;
+}
+.result_num1{
+	grid-area:result_num1;
+}
+
+.result_num2{
+	grid-area:result_num2;
+}
+
+.result_num3{
+	grid-area:result_num3;
+}
+
+.result_num4{
+	grid-area:result_num4;
+}
+
+.result_num5{
+	grid-area:result_num5;
+}
+
+.result_num6{
+	grid-area:result_num6;
+}
+
+.result_name1{
+	grid-area: result_name1;
+}
+
+.result_name2{
+	grid-area: result_name2;
+}
+
+.result_name3{
+	grid-area: result_name3;
+}
+
+.result_name4{
+	grid-area: result_name4;
+}
+
+.result_name5{
+	grid-area: result_name5;
+}
+
+.result_name6{
+	grid-area: result_name6;
+}
+.result_address1{
+	grid-area: result_address1
+}
+.result_address2{
+	grid-area: result_address2;
+}
+.result_address3{
+	grid-area: result_address3;
+}
+.result_address4{
+	grid-area: result_address4;
+}
+.result_address5{
+	grid-area: result_address5;
+}
+.result_address6{
+	grid-area: result_address6;
+}
+.result_tel1{
+	grid-area: result_tel1;
+}
+.result_tel2{
+	grid-area: result_tel2;
+}
+.result_tel3{
+	grid-area: result_tel3;
+}
+.result_tel4{
+	grid-area: result_tel4;
+}
+.result_tel5{
+	grid-area: result_tel5;
+}
+.result_tel6{
+	grid-area: result_tel6;
+}
+.result_btn1{
+	grid-area: result_btn1;
+}
+.result_btn2{
+	grid-area: result_btn2;
+}
+.result_btn3{
+	grid-area: result_btn3;
+}
+.result_btn4{
+	grid-area: result_btn4;
+}
+.result_btn5{
+	grid-area: result_btn5;
+}
+.result_btn6{
+	grid-area: result_btn6;
+}
+.haejwo{
+	padding-bottom: 2vh;
+	    font-size: 1.5vmin;
+}
+.result_btn_div{
+	 box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border-color: #ffffff;
+}
+.haejwo >button{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 1.5vmin;
+    height: 3vh;
+    width: 11vmin;
+    transition: 0.6s;
+}
+.haejwo >button:hover{
+	background-color: white;
+    color: black;
+}
+/*  */
+.map {
+	grid-area: map;
+	width: 90%;
+    margin: auto;
+    height: 30vmin;
+    filter: grayscale(70%);
+    top: 3vh;
+    margin-bottom: 1vh;
+}
+
+
+.user_setting {
+    grid-area: user_setting;
+    display: table;
+    margin: auto;
+        margin-top: 1.5vw;
+}
+
+/* 목적지 옵션박스 */
+#network-popUp,
+#network-popUp2 {
+	width: 50%;
+    line-height: 1.5;
+    color: #8e8e8e;
+    float: right;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-top: -5vh;
+}
+
+.select_destination{
+	font-size: 1.5vmin;
+    width: 13.5vw;    
+}
+/* 검색버튼 */
+    .md-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:#D9230F;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+/* 시간조절 */
+.time_div{
+	grid-area: time_div;
+	padding-top: 1vh;
+}
+.time_set{
+	font-size: 4vmin;
+	
+	cursor: pointer;
+}
+.time_set:active{
+    background-color: #0080ff;
+}
+.time_count{
+	height: 3vh;
+	width: 13vw;
+	top: -1vh;
+    position: relative;
+}
+/* 거리 */
+.funkyradio {
+	grid-area: funkyradio;
+	clear: both;
+	content: "";
+	display: table;
+	margin: auto;
+}
+
+.funkyradio div {
+	overflow: hidden;
+	float: left;
+	margin: 3px;
+}
+
+.funkyradio label {
+	width: 100%;
+	border-radius: 5px;
+	font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty{
+	display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label{
+	position: relative;
+	color: #c0c0c0;
+	background-color: #404040;
+	width: 14vw;
+	line-height: 2.5em;
+	text-indent: 1.25em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-size: 1.5vmin;
+	border: solid 1px #ffffff00;
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before{
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover ~ label{
+	color: #777777;
+	border: solid 1px white;
+}
+
+.funkyradio input[type="radio"]:hover ~ label:before{
+	content: '\2714';
+	text-indent: .1em;
+	
+}
+
+.funkyradio input[type="radio"]:checked ~ label{
+	color: white;
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	border: solid 1px white
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before{
+	content: '\2714';
+	text-indent: 0.1em;
+	color: #333;
+	background-color: #ccc;
+}
+
+/* .funkyradio input[type="radio"]:focus ~ label:before{
+	box-shadow: 0 0 0 3px #999;
+} */
+
+.funkyradio-info input[type="radio"]:checked ~ label:before{
+	color: #000000;
+	background-color: white;
+	    font-weight: bolder;
+	
+}
+/* 버튼 */
+.summit_btn {
+	grid-area: summit_btn;
+	clear: left;
+}
+.loding_button{
+    background-color: rgba(255, 215, 0, 0);;
+    width: 16vw;
+    margin-top: 1%;
+    height: 5vh;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: solid 2px white;    
+}
+.loding_button:hover{
+	color: white;
+    text-decoration: none;
+    background-color:gold;
+}
+   
+
+/* 위치설정 부분 */
+.location_input {
+	color: black;
+	position: relative;
+	margin-bottom: 6rem;
+}
+.location_input .loBtn,
+.location_input .deBtn{
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    width: 7vh;
+    height: 4vh;
+    border: solid white;
+}
+
+.location_input .location_input_text1 {
+	font-size: 2vmin;
+    display: block;
+    border: none;
+    box-shadow: none;
+    margin-top: 6vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 4vh;
+    width: 27vw;
+}
+.location_input .location_input_text2 {
+	font-size: 2vmin;
+    display: block;
+    border: none;
+    box-shadow: none;
+    margin-top: 11vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 4vh;
+    width: 27vw;
+}
+
+.location_input label {    
+	color: #d0d0d0;
+    font-size: 2.2vmin;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: -4vh;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+
+
+.location_input .bar:before {
+	left: 50%;
+}
+
+.location_input .bar:after {
+	right: 50%;
+}
+
+.location_input .highlight {
+	position: absolute;
+    height: 3rem;
+    width: 55rem;
+    top: 1rem;
+    left: 0;
+    pointer-events: none;
+	opacity: 0.5;
+}
+
+.location_input .location_input_text1:focus ~ label{
+	font-size: 16px;
+	color: white;
+}
+.location_input .location_input_text2:focus ~ label{
+	font-size: 16px;
+	color: white;
+}
+
+.location_input .bar:before,
+.location_input .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 0px;
+	position: absolute;
+	background: #blue;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+.location_input .location_input_text1:focus ~ .bar:before,
+.location_input .location_input_text2:focus ~ .bar:before,
+.location_input .location_input_text1:focus ~ .bar:after
+.location_input .location_input_text2:focus ~ .bar:after {
+	width: 50%;
+}
+
+@media screen and (max-width: 970px) {
+  .funkyradio input[type="radio"]:empty ~ label{
+	width: 20vw;
+}
+	.time_count{
+	    width: 25vw;
+	}
+	.funkyradio{
+		width: 42vw;
+	}
+	.loding_button{
+	    width: 30vw; 
+	}
+	.map{
+		width:100%;
+	}
+} 
+
+@media screen and (max-width: 700px) {
+.user_setting{
+	width: 74vw;
+}
+.location_input .location_input_text1,
+.location_input .location_input_text2{
+	width: 74vw;
+}
+.funkyradio input[type="radio"]:empty ~ label{
+	    width: 34vw;
+}
+.funkyradio label{
+	    font-size: 3vw;
+}
+.select_destination{
+font-size: 1vh;
+    width: 37vw;  
+}
+#cat_msg_div {
+    width: 20vw;      
+}
+#cat_msg_div>img {
+    width: 20vw;
+    position: absolute;
+    top: -18vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color: black;
+}
+#cat_say {
+    position: absolute;
+    font-size: 3vw;
+    color: red;
+    top: -11.5vh;
+    left: 2vw;
+}
+.funkyradio{
+		width: 35vw;
+	}
+	.time_count {
+    width: 34vw;
+}
